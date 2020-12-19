@@ -12,6 +12,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
 import ScheduleRepairDialog from './ScheduleRepairDialog';
+import { Tooltip } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -93,6 +94,7 @@ export default function DataTable() {
       <h2>Appointments</h2>
       <Grid container spacing={8} className={classes.gridContainer}>
         <Grid item md={4}>
+        <Tooltip title='Use this to filter appointments' arrow>
           <Paper className={classes.paper}>
             <Calendar
               onChange={onChange}
@@ -102,6 +104,7 @@ export default function DataTable() {
               <ScheduleRepairDialog />
             </div>
           </Paper>
+          </Tooltip>
         </Grid>
         <Grid item>
           <Paper className={classes.paper}>
