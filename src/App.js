@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Inventory from './components/Inventory';
+import ScheduleRepair from './components/ScheduleRepair';
+import Customers from './components/Customers';
+import LandingPage from './components/LandingPage';
+import Grid from '@material-ui/core/Grid';
+import Footer from './components/Footer'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <LandingPage/>
+        <ScheduleRepair/>
+        <Grid container spacing={1}>
+          <Grid item md={4}><Inventory/></Grid>
+          <Grid item md={8}><Customers/></Grid>
+        </Grid>
+        <Footer/>
+      </div>
+    );
+  }
 }
 
 export default App;
